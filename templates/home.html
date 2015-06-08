@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block sponsors %}
+    <h2>Sponsors</h2>
+	{% if sponsors %}
+	    <ul>
+			{% for sponsor in sponsors %}
+			<li><a href="{{sponsor.url}}" taret="_blank"><img class="logo" src="/media/{{sponsor.logo}}" alt="{{sponsor.name}}"</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endblock %}
