@@ -1,3 +1,21 @@
+body {
+	background-color: blue;
+}
+
 .logo {
 	max-width: 200px;
 }
+.section-heading h2 {
+    font-size: 24px;
+	font-weight: 500;
+}
+.box-team img {
+    max-height: 100px;
+}
+a.fa-stack-1x, .fa-stack-2x {
+	  position: absolute;
+	    left: 0;
+		  width: 100%;
+		    text-align: center;
+			  color: #7a7c7c;
+		  }

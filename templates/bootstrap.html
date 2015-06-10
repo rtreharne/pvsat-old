@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>PVSAT-12 UoL</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- css -->
+	<link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
+	<link href="{% static "css/style.css" %}" rel="stylesheet" media="screen">
+	<link href="{% static "color/default.css" %}" rel="stylesheet" media="screen">
+	<link href="{% static "css/main.css" %}" rel="stylesheet" media="screen">
+	<script src="{% static "js/modernizr.custom.js" %}"></script>
+      </head>
+  <body>
+	<div class="menu-area">
+			<div id="dl-menu" class="dl-menuwrapper">
+						<button class="dl-trigger">Open Menu</button>
+						<ul class="dl-menu">
+							<li>
+								<a href="#intro">Home</a>
+							</li>
+							<li><a href="#sponsor">Sponsors</a></li>
+						</ul>
+					</div><!-- /dl-menuwrapper -->
+	</div>	
+
+	  <!-- intro area -->	  
+	  <div id="intro">
+	  
+			<div class="intro-text">
+				<div class="container">
+					<div class="row">
+					
+						
+					<div class="col-md-12">
+			
+						<div class="brand">
+							<h1><a href="index.html">PVSAT-12</a></h1>
+							<div class="line-spacer"></div>
+							<p><span>6 - 8 June 2015</span></p>
+						</div>
+					</div>
+					</div>
+			<div class="row mar-top30 ">
+				<div class="col-md-offset-2 col-md-8">
+					<ul class="social-network">
+						<li><a href="#">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+						</span></a>
+						</li>
+						<li><a href="#">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						</span></a>
+						</li>
+						<li><a href="#">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+						</span></a>
+						</li>
+					</ul>
+				</div>				
+			</div>
+				</div>
+		 	</div>
+			
+	 </div>
+	  
+
+	  
+	  
+	  <!-- Sponsors -->
+	  <section id="sponsor" class="home-section bg-white">
+		<div class="container">
+			  <div class="row">
+				  <div class="col-md-offset-2 col-md-8">
+					<div class="section-heading">
+					 <h2>Sponsored by</h2>
+					</div>
+				  </div>
+			  </div>
+			  <div class="row">
+			  {% if sponsors %}
+			  {% for sponsor in sponsors %}
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+					<div class="box-team wow">
+						<a href="{{sponsor.url}}" target=_"blank">
+						<img src="/media/{{sponsor.logo}}" alt="" class="img-responsive" />
+					</a>
+					</div>
+                </div>
+			  {% endfor %}
+			  {% endif %}
+			</div>
+         </div>
+		</section>	  
+	  
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Copyright &copy;2015 Pixel Punisher. All rights reserved.</a></p>
+				    <p>|<a href="/admin/">Admin</a>|</p>
+				</div>
+			</div>		
+		</div>	
+	</footer>
+	 
+	 <!-- js -->
+	 <script src="{% static "js/jquery.js" %}"></script>
+	 <script src="{% static "js/bootstrap.min.js" %}"></script>
+	 <script src="{% static "js/jquery.smooth-scroll.min.js" %}"></script>
+	 <script src="{% static "js/jquery.dlmenu.js" %}"></script>
+	 <script src="{% static "js/wow.min.js" %}"></script>
+	 <script src="{% static "js/custom.js" %}"></script>
+  	
+</html>

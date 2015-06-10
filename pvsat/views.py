@@ -8,3 +8,8 @@ def home(request):
     sponsor_dict = {'sponsors': sponsor_list,
 			        'speakers': speaker_list}
     return render(request, 'home.html', sponsor_dict)
+
+def bootstrap(request):
+    sponsor_list = Sponsor.objects.all()
+    sponsor_dict = {'sponsors': sponsor_list}
+    return render(request, 'bootstrap.html', sponsor_dict)
