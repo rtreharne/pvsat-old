@@ -1,3 +1,17 @@
+div.brand h4{
+	color: #fff;
+}
+#intro {
+  background-image: url(../img/background-intro.png);
+  background-size: auto;
+}
+.intro-text h1 a {
+  font-size: 60px;
+}
+.intro-text p span {
+  font-size: 30px;
+  font-weight: 500;
+}
 body {
 	background-color: blue;
 }
