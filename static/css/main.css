@@ -1,10 +1,13 @@
 div.brand h4{
 	color: #fff;
 }
-#intro {
+.intro-text {
+  margin-top: 150px;
+}
+/*#intro {
   background-image: url(../img/background-intro.png);
   background-size: auto;
-}
+}*/
 .intro-text h1 a {
   font-size: 60px;
 }
