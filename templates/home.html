@@ -5,7 +5,22 @@
 	{% if sponsors %}
 	    <ul>
 			{% for sponsor in sponsors %}
-			<li><a href="{{sponsor.url}}" taret="_blank"><img class="logo" src="/media/{{sponsor.logo}}" alt="{{sponsor.name}}"</a></li>
+			<li><a href="{{sponsor.url}}" taret="_blank"><img class="logo" src="/media/{{sponsor.logo}}" alt="{{sponsor.name}}"/></a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endblock %}
+
+{% block speakers %}
+    <h2>Keynote Speakers</h2>
+	{% if speakers %}
+	    <ul>
+			{% for speaker in speakers %}
+			<li>
+			<a href="{{speaker.url}}" taret="_blank"><img class="speaker_pic" src="/media/{{speaker.pic}}" alt="{{speaker.surname}}" /></a>
+				<p>{{speaker.forename}} {{speaker.surname}}</p>
+				<p>{{speaker.affiliation}}</p>
+			</li>
 			{% endfor %}
 		</ul>
 	{% endif %}
