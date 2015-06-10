@@ -11,5 +11,10 @@ def home(request):
 
 def bootstrap(request):
     sponsor_list = Sponsor.objects.all()
-    sponsor_dict = {'sponsors': sponsor_list}
+    speaker_list = Speaker.objects.all()
+    sponsor_dict = {'sponsors': sponsor_list,
+			        'speakers': speaker_list}
     return render(request, 'bootstrap.html', sponsor_dict)
+
+def carousel(request):
+    return render(request, 'carousel.html')
