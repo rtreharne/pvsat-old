@@ -43,7 +43,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sponsors',
-    'speakers'
+    'speakers',
+
+    'sorl.thumbnail'
 )
 
 MIDDLEWARE_CLASSES = (
