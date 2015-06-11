@@ -1,3 +1,9 @@
+.bg-liverpool {
+	background-image: url("../img/liverpool.jpg");
+}
+.home-section {
+  padding: 90px 0px 100px 0px;
+}
 .section-heading.white {
 	margin-bottom: 20px;
 }
@@ -66,7 +72,7 @@ ul.thumbnails{
 #myCarousel li{
 	padding-bottom: 20px;
 }
-.thumbnail-carousel a>img {
+.thumbnail-carousel img {
   border: solid 4pt white;
 }
 .thumbnail-carousel {
@@ -74,4 +80,10 @@ ul.thumbnails{
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
+}
+.thumbnails li> .fff .caption {
+  background: #fff !important;
+  padding: 10px;
+  max-width: 308px;
+  margin: auto;
 }

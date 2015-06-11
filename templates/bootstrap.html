@@ -23,6 +23,10 @@
 							</li>
 							<li><a href="#speakers">Speakers</a></li>
 							<li><a href="#sponsor">Sponsors</a></li>
+							<li><a href="#venue">Venue</a></li>
+							<li><a href="#venue">Registration</a></li>
+							<li><a href="#venue">Authors</a></li>
+							<li><a href="http://pvsat.org.uk">Archive</a></li>
 						</ul>
 					</div><!-- /dl-menuwrapper -->
 	</div>	
@@ -81,43 +85,31 @@
     <div class="carousel slide" id="myCarousel">
         <div class="carousel-inner">
 			{% if speakers %}	
-            <div class="item active">
-                    <ul class="thumbnails">
-			            {% for speaker in speakers %}
-                        <li class="col-sm-3">
-    						<div class="fff">
-								<div class="thumbnail-carousel">
-									<a href="#"><img src="/media/{{speaker.pic}}" alt=""></a>
+			{% for chunk in speakers %}
+			    {% if forloop.first %}
+				<div class="item active">
+		        {% else %}	
+				<div class="item">
+			    {% endif %}
+						<ul class="thumbnails">
+							{% for speaker in chunk %}
+							<li class="col-sm-3">
+								<div class="fff">
+									<div class="thumbnail-carousel">
+										<img src="/media/{{speaker.pic}}" alt="">
+									</div>
+									<div class="caption">
+										<h4>{{speaker.forename}} {{speaker.surname}}</h4>
+										<p>{{speaker.affiliation}}</p>
+									</div>
 								</div>
-								<div class="caption">
-									<h4>{{speaker.forename}} {{speaker.surname}}</h4>
-									<p>{{speaker.affiliation}}</p>
-									<a class="btn btn-mini" href="#">» Read More</a>
-								</div>
-                            </div>
-                        </li>
-						{% endfor %}
-                    </ul>
-              </div><!-- /Slide2 --> 
+							</li>
+							{% endfor %}
+						</ul>
+				  </div><!-- /Slide2 --> 
+		      {% endfor %}
 			  {% endif %}
-<!--            <div class="item">
-                    <ul class="thumbnails">
-                        <li class="col-sm-3">	
-							<div class="fff">
-								<div class="thumbnail">
-									<a href="#"><img src="https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=300%C3%97300&w=300&h=300&fm=png" alt=""></a>
-								</div>
-								<div class="caption">
-									<h4>Praesent commodo</h4>
-									<p>Nullam Condimentum Nibh Etiam Sem</p>
-									<a class="btn btn-mini" href="#">» Read More</a>
-								</div>
-                            </div>
-                        </li>
-                    </ul>
-              </div><!-- /Slide3 --> 
         </div>
-		--> 
 	   <nav>
 			<ul class="control-box pager">
 				<li><a data-slide="prev" href="#myCarousel" class=""><i class="glyphicon glyphicon-chevron-left"></i></a></li>
@@ -155,13 +147,20 @@
 			</div>
          </div>
 		</section>	  
+
+		<section id="venue" class="home-section bg-liverpool">
+			<div class="div-left">
+				<img src="{% static "img/liverpool_log_white.png" %}"/>
+			</div>
+		</section>
+
 	  
 
 	<footer>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<p>Copyright &copy;2015 Pixel Punisher. All rights reserved.</a></p>
+					<p>Copyright &copy;2015 Pixel Corral. All rights reserved.</a></p>
 				    <p>|<a href="/admin/">Admin</a>|</p>
 				</div>
 			</div>		
