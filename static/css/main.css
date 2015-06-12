@@ -1,3 +1,6 @@
+h4 {
+	font-size: 18px;
+}
 .thumb {
     display: inline-block;
     width: 100%;
@@ -12,12 +15,17 @@
 @media (max-width: 768px) {
     .thumb {
 		width: 75%;
-		max-width:300px;
-		padding-top: 50%;
+		max-width: 200px;
+		padding-top: 45%;
 	}
 }
 .bg-liverpool {
 	background-image: url("../img/liverpool.jpg");
+	width:100%;
+	display: inline-block;
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat
 }
 .home-section {
   padding: 90px 0px 100px 0px;
@@ -68,7 +76,11 @@ a.fa-stack-1x, .fa-stack-2x {
 			  color: #7a7c7c;
 		  }
 /*** CAROUSEL ***/
-
+@media (min-width: 768px) {
+.carousel.slide .col-sm-3 {
+	  width: 20%;
+  }
+}
 .bg-gray {
 	background-color: #D2D2D2;
 }

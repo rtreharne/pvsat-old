@@ -14,8 +14,8 @@ def chunk(a):
     b = list(a)
     shuffle(b)
     chunk_list = []
-    for i in range (0, len(b), 4):
-        chunk = b[i:i+4]
+    for i in range (0, len(b), 5):
+        chunk = b[i:i+5]
         chunk_list.append(chunk)
     return chunk_list
 
