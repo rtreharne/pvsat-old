@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>PVSAT-12 UoL</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+	<div class="menu-area">
+			<div id="dl-menu" class="dl-menuwrapper">
+						<button class="dl-trigger">Open Menu</button>
+						<ul class="dl-menu">
+							<li>
+								<a href="#intro">Home</a>
+							</li>
+							<li><a href="#speakers">Speakers</a></li>
+							<li><a href="#sponsor">Sponsors</a></li>
+							<li><a href="#venue">Venue</a></li>
+							<li><a href="#venue">Registration</a></li>
+							<li><a href="#venue">Authors</a></li>
+							<li><a href="http://pvsat.org.uk">Archive</a></li>
+						</ul>
+					</div><!-- /dl-menuwrapper -->
+	</div>	
+
+	  <!-- intro area -->	  
+	  <div id="intro">
+	  
+			<div class="intro-text">
+				<div class="container">
+					<div class="row">
+					
+						
+					<div class="col-md-12">
+			
+						<div class="brand">
+							<h1><a href="index.html">PVSAT-12</a></h1>
+							<div class="line-spacer"></div>
+							<p><span>6 - 8 April 2016</span></p>
+							<h4>University of Liverpool</h4>
+						</div>
+					</div>
+					</div>
+					
+			<div class="row mar-top30 ">
+				<div class="col-md-offset-2 col-md-8">
+					<ul class="social-network">
+						<li><a href="#">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+						</span></a>
+						</li>
+						<li><a href="#">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+						</span></a>
+						</li>
+						<li><a href="#">
+						<span class="fa-stack fa-2x">
+							<i class="fa fa-circle fa-stack-2x"></i>
+							<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+						</span></a>
+						</li>
+					</ul>
+				</div>				
+			</div>
+				</div>
+		 	</div>
+			
+	 </div>
+
+	 <section id="speakers" class="carousel-section bg-gray">
+		 <div class="section-heading white">
+		 <h2>Guest Speakers</h2>
+	 </div>
+			{% if speakers %}	
+			{% for chunk in speakers %}
+			    {% if forloop.first %}
+				<div class="item active">
+		        {% else %}	
+				<div class="item">
+			    {% endif %}
+						<ul class="thumbnails">
+							{% for speaker in chunk %}
+							<li class="col-sm-3">
+								<div class="fff">
+								    <img src="/media/{{speaker.pic}}">
+								</div>
+									<div class="caption">
+										<h4>{{speaker.forename}} {{speaker.surname}}</h4>
+										<p>{{speaker.affiliation}}</p>
+									</div>
+								</div>
+							</li>
+							{% endfor %}
+						</ul>
+				  </div>
+		      {% endfor %}
+			  {% endif %}
+	 </section>
+	  
+	  
+	  <!-- Sponsors -->
+	  <section id="sponsor" class="home-section bg-white">
+		<div class="container">
+			  <div class="row">
+				  <div class="col-md-offset-2 col-md-8">
+					<div class="section-heading">
+					 <h2>Sponsored by</h2>
+					</div>
+				  </div>
+			  </div>
+			  <div class="row">
+			  {% if sponsors %}
+			  {% for sponsor in sponsors %}
+                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+					<div class="box-team wow">
+						<a href="{{sponsor.url}}" target=_"blank">
+						<img src="/media/{{sponsor.logo}}" alt="" class="img-responsive" />
+					</a>
+					</div>
+                </div>
+			  {% endfor %}
+			  {% endif %}
+			</div>
+         </div>
+		</section>	  
+
+		<section id="venue" class="home-section bg-liverpool">
+			<div class="div-left">
+				<img src="{% static "img/liverpool_log_white.png" %}"/>
+			</div>
+		</section>
+
+	  
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>Copyright &copy;2015 Pixel Corral. All rights reserved.</a></p>
+				    <p>|<a href="/admin/">Admin</a>|</p>
+				</div>
+			</div>		
+		</div>	
+	</footer>
+</html>

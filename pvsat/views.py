@@ -26,3 +26,11 @@ def bootstrap(request):
     sponsor_dict = {'sponsors': sponsor_list,
 	            'speakers': speaker_chunk}
     return render(request, 'bootstrap.html', sponsor_dict)
+
+def bare(request):
+    sponsor_list = Sponsor.objects.all()
+    speaker_list = Speaker.objects.all()
+    speaker_chunk = chunk(speaker_list)
+    sponsor_dict = {'sponsors': sponsor_list,
+	            'speakers': speaker_chunk}
+    return render(request, 'bare.html', sponsor_dict)
