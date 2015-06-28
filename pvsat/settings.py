@@ -44,6 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'sponsors',
     'speakers',
+    'committee',
+    'exhibitors',
 
     'sorl.thumbnail'
 )

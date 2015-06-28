@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from sponsors.models import Sponsor
 from speakers.models import Speaker
+from committee.models import Member
+from exhibitors.models import Exhibitor
 from random import shuffle
 
 def home(request):
@@ -30,7 +32,10 @@ def bootstrap(request):
 def bare(request):
     sponsor_list = Sponsor.objects.all()
     speaker_list = Speaker.objects.all()
-    speaker_chunk = chunk(speaker_list)
+    committee_list = Member.objects.all()
+    exhibitor_list = Exhibitor.objects.all()
     sponsor_dict = {'sponsors': sponsor_list,
-	            'speakers': speaker_chunk}
+	            'speakers': speaker_list,
+                    'committee': committee_list,
+                    'exhibitors': exhibitor_list,}
     return render(request, 'bare.html', sponsor_dict)

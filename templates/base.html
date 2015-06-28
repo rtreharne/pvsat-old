@@ -3,22 +3,25 @@
 <html lang="en">
 <head>
     <title>{% block title %}PVSAT-12{% endblock %}</title>
-	<link rel="stylesheet" href="{% static "css/main.css" %}">
+    <link rel="stylesheet" href="{% static "css/bare.css" %}">
 </head>
 
 <body>
     <section id="splash">
 		<h1>PVSAT-12</h1>
-	</section>
+    </section>
 
-	<section id="sponsors">
+    <section id="sponsors">
 		{% block sponsors %}
 		{% endblock %}
-	</section>
+    </section>
 	
-	<section id="speakers">
+    <section id="speakers">
 		{% block speakers%}
 		{% endblock %}
-	</section>
+    </section>
+
+    <section id="committee">
+    </section>
 </body>
 		
