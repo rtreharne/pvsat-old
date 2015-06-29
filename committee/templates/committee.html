@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="committee">
+        <h3>PVSAT-12 Organising Committee</h3>
+        <ul>
+            {% for member in members %}
+            <li>
+                <img src="/media/{{member.pic}}">
+                <p>{{member.forename}} {{member.surname}}</p>
+                <p>{{member.affiliation}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

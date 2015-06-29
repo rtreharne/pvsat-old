@@ -31,7 +31,6 @@ ALLOWED_HOSTS = []
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates/')
 TEMPLATE_DIRS = ('',
         TEMPLATE_PATH,
-        os.path.join(BASE_DIR, 'blog/templates/')
         )
 
 # Application definition
@@ -44,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'sponsors',
-    'speakers',
+    'programme',
     'committee',
     'exhibitors',
     'blog',

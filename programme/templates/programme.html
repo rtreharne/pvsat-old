@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section id="themes">
+        <h3>Conference Themes</h3>
+        <ol>
+            {% for theme in themes %}
+            <li>{{theme.title}}</li>
+            <br />
+            {% endfor %}
+        </ol>
+    </section>
+
+    <section id="guest-speakers">
+        <h3>Guest Speakers</h3>
+        <ul>
+            {% for speaker in speakers %}
+            <li>
+                <img src="/media/{{speaker.pic}}" name="{{speaker.forename}} {{speaker.surname}}">
+                <p>"{{speaker.title}}"
+                <p>{{speaker.forename}} {{speaker.surname}}</p>
+                <p>{{speaker.affiliation}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

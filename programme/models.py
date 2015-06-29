@@ -13,3 +13,9 @@ class Speaker(models.Model):
 
     def __unicode__(self):
         return self.surname
+
+class Theme(models.Model):
+    title = models.CharField(max_length=128, unique=True)
+
+    def __unicode__(self):
+        return self.title

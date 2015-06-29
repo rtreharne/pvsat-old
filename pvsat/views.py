@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from sponsors.models import Sponsor
-from speakers.models import Speaker
+from programme.models import Speaker
 from committee.models import Member
 from exhibitors.models import Exhibitor
 from blog.models import Article
