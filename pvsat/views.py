@@ -3,8 +3,19 @@ from sponsors.models import Sponsor
 from speakers.models import Speaker
 from committee.models import Member
 from exhibitors.models import Exhibitor
+from blog.models import Article
 from random import shuffle
 
+def home(request):
+    sponsor_list = Sponsor.objects.all()
+    speaker_list = Speaker.objects.all()
+    article = Article.objects.latest('pub_date')
+    dict = {'speakers': speaker_list,
+            'sponsors': sponsor_list,
+            'articles': article}
+    return render(request, 'home.html', dict)
+
+'''
 def home(request):
     sponsor_list = Sponsor.objects.all()
     speaker_list = Speaker.objects.all()
@@ -39,3 +50,4 @@ def bare(request):
                     'committee': committee_list,
                     'exhibitors': exhibitor_list,}
     return render(request, 'bare.html', sponsor_dict)
+    '''

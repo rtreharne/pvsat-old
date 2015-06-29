@@ -1,27 +1,56 @@
 {% extends "base.html" %}
 
-{% block sponsors %}
-    <h2>Sponsors</h2>
-	{% if sponsors %}
-	    <ul>
-			{% for sponsor in sponsors %}
-			<li><a href="{{sponsor.url}}" taret="_blank"><img class="logo" src="/media/{{sponsor.logo}}" alt="{{sponsor.name}}"/></a></li>
-			{% endfor %}
-		</ul>
-	{% endif %}
-{% endblock %}
+{% block content %}
+    <section id="title">
+        <div>
+            <div>
+                <h1>PVSAT-12</h1>
+                <h2>6 - 8 April 2016</h2>
+                <h3>University of Liverpool</h3>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="">Register now!</a></li>
+                    <li><a href="">Submit an abstract</a></li>
+                    <li><a href="">Apply for a bursary</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <hr />
 
-{% block speakers %}
-    <h2>Keynote Speakers</h2>
-	{% if speakers %}
-	    <ul>
-			{% for speaker in speakers %}
-			<li>
-			<a href="{{speaker.url}}" taret="_blank"><img class="speaker_pic" src="/media/{{speaker.pic}}" alt="{{speaker.surname}}" /></a>
-				<p>{{speaker.forename}} {{speaker.surname}}</p>
-				<p>{{speaker.affiliation}}</p>
-			</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
+    <section id="blog">
+        <h4>{{articles.title}}</h4>
+        <p>{{articles.body|slice:":255"}} <a href="">... (read more)</a></p>
+    </section>
+    
+    <hr />
+
+    <section id="guest-speakers">
+        <h3>Guest Speakers</h3>
+        <ul>
+            {% for speaker in speakers %}
+            <li>
+                <img src="/media/{{speaker.pic}}" name="{{speaker.forename}} {{speaker.surname}}">
+                <p>{{speaker.forename}} {{speaker.surname}}</p>
+                <p>{{speaker.affiliation}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="">Full list</a>
+    </section>
+
+    <hr />
+
+    <section id="sponsors">
+        <h3>PVSAT-12 is sponsored by:</h3>
+        <ul>
+            {% for sponsor in sponsors %}
+            <li>
+                <img src="/media/{{sponsor.logo}}" alt ="{{sponsor.name}}">
+            </li>
+        </ul>
+        {% endfor %}
+    </section>
 {% endblock %}

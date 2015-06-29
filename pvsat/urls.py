@@ -4,10 +4,8 @@ from django.conf import settings
 
 urlpatterns = patterns('',
     url(r'^$', 'pvsat.views.home', name='home'),
-    url(r'^bootstrap/', 'pvsat.views.bootstrap', name='bootstrap'),
-    url(r'^bare/', 'pvsat.views.bare', name='bare'),
-    # url(r'^blog/', include('blog.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^blog/', include('blog.urls')),
 )
 
 if settings.DEBUG:

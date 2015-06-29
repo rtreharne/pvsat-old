@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates/')
 TEMPLATE_DIRS = ('',
         TEMPLATE_PATH,
+        os.path.join(BASE_DIR, 'blog/templates/')
         )
 
 # Application definition
@@ -46,6 +47,7 @@ INSTALLED_APPS = (
     'speakers',
     'committee',
     'exhibitors',
+    'blog',
 
     'sorl.thumbnail'
 )
