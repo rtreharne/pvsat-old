@@ -3,11 +3,7 @@ from django.contrib import admin
 from django.conf import settings
 
 urlpatterns = patterns('',
-    url(r'^$', 'pvsat.views.home', name='home'),
-    url(r'^bootstrap/', 'pvsat.views.bootstrap', name='bootstrap'),
-    url(r'^bare/', 'pvsat.views.bare', name='bare'),
-    url(r'^stanley/', include('stanley.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^$', 'stanley.views.home', name='home'),
 )
 
 if settings.DEBUG:

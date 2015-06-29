@@ -1,0 +1,50 @@
+28/06/2015
+
+Pages
+-----
++ header
+    - nav bar
+    - twitter/facebook/google+
+
+    + index
+        - main splash
+            + title
+            + date
+            + venue
+            + submit abstract button
+            + register button
+            + register for bursary
+        |- blog snippett*
+        |- guest speakers - random selection (4)*
+        - sponsors
+    + blog
+        - articles list
+    + Exhibit
+        - Exhibitors
+        - form
+    + Programme
+        - Subject Areas
+        - Guest Speakers (full list)
+    + Sponsors
+    + Venue
+        - getting there
+        - accommodation
+        - map
+    + submit abstract
+        - deadline
+        - guidelines/template
+        - submission form
+    + Registration
+        - deadline
+        - fees
+        - form
+    + Bursaries
+
++ footer
+    - contact
+    - location map
+    - copyright
+
++ footer
+
+*Do not show on mobile/tablet

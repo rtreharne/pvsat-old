@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates/')
 TEMPLATE_DIRS = ('',
         TEMPLATE_PATH,
+        os.path.join(BASE_DIR, 'stanley/templates/')
         )
 
 # Application definition
@@ -47,7 +48,8 @@ INSTALLED_APPS = (
     'committee',
     'exhibitors',
 
-    'sorl.thumbnail'
+    'sorl.thumbnail',
+    'stanley',
 )
 
 MIDDLEWARE_CLASSES = (
