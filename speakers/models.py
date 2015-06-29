@@ -5,8 +5,11 @@ class Speaker(models.Model):
     forename = models.CharField(max_length=128, unique = True)
     surname = models.CharField(max_length=128, unique = True)
     affiliation = models.CharField(max_length=128)
-    url = models.URLField()
+    title = models.CharField(max_length=128, blank=True)
     pic = ImageField(upload_to='logo_images', blank=True)
+    url = models.URLField(blank=True)
+    linkedin = models.URLField(blank=True)
+    twitter = models.URLField(blank=True)
 
     def __unicode__(self):
         return self.surname

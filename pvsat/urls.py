@@ -6,6 +6,7 @@ urlpatterns = patterns('',
     url(r'^$', 'pvsat.views.home', name='home'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^blog/', include('blog.urls')),
+    url(r'^programme/', include('programme.urls')),
 )
 
 if settings.DEBUG:
