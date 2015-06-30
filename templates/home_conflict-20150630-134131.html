@@ -9,11 +9,9 @@
 		    <h2>6 - 8 April 2016</h2>
 		    <h3>University of Liverpool, UK</h3>
 		    <br />
-		    <ul class="list-unstyled">
-		        <li><a class="btn btn-default page-scroll" href="">Register Now!</a></li>
-			<li><a class="btn btn-default page-scroll" href="">Submit an Abstract</a></li>
-			<li><a class="btn btn-default page-scroll" href="">Apply for a Bursary</a></li>
-		    </ul>
+                    <a class="btn btn-default page-scroll" href="">Register Now!</a>
+                    <a class="btn btn-default page-scroll" href="">Submit an Abstract</a>
+                    <a class="btn btn-default page-scroll" href="">Apply for a Bursary</a>
                 </div>
             </div>
         </div>
@@ -23,15 +21,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="center">Blog</h2>
+                    <h2>Blog</h2>
                     <h3>{{articles.title}}</h4>
-                    <p>{{articles.body|slice:":255"}} ...</p>
+                    <p>{{articles.body|slice:":255"}} <a href="{% url 'articles' %}">... (read more)</a></p>
                 </div>
             </div>
-			<br />
-			<div class="col-lg-12 center">
-				<a class="btn btn-default page-scroll" href="{% url 'articles' %}">Read More</a>
-			</div>
         </div>
     </section>
 
@@ -39,8 +33,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-		    <h2 class="center">Guest Speakers</h2>
-		    <ul class="list-unstyled">
+		    <h2>Programme</h2>
+		    <h3>Guest Speakers</h3>
+		    <ul class="list-thumbnail">
 			{% for speaker in speakers|slice:":4" %}
 			<li class="col-sm-3">
 			    <div class="thumbnail-container">
@@ -54,10 +49,6 @@
 		    </ul>
                 </div>
             </div>
-			<br />
-			<div class="col-lg-12 center">
-				<a class="btn btn-default page-scroll" href="{% url 'programme' %}">Full Programme</a>
-			</div>
         </div>
         <ul>
     </section>
