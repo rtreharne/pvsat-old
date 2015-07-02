@@ -1,5 +1,5 @@
 #sponsors img {
-    max-width: 200px;
+    max-width: 100%;
 }
 
 #guest-speakers img {
@@ -12,6 +12,7 @@
 
 .intro-section {
     padding-top: 18%;
+    min-height: 500px;
 }
 
 .blog-section {
@@ -24,6 +25,20 @@
     background: #fff;
     padding-top: 25px;
     padding-bottom: 50px;
+}
+
+.sponsor-section {
+    background: #eee;
+    padding-top: 25px;
+    padding-bottom: 50px;
+}
+
+.footer-section {
+    background: black;
+    text-align:center;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .list-unstyled {

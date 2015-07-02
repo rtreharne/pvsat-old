@@ -62,14 +62,26 @@
         <ul>
     </section>
 
-    <section id="sponsors">
-        <h3>PVSAT-12 is sponsored by:</h3>
-        <ul>
-            {% for sponsor in sponsors %}
-            <li>
-                <img src="/media/{{sponsor.logo}}" alt ="{{sponsor.name}}">
-            </li>
-        </ul>
-        {% endfor %}
+    <section id="sponsors" class="sponsor-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+					<h2 class="center">Sponsors</h2>
+					<ul class="list-unstyled">
+					{% for sponsor in sponsors %}
+						<li class="col-sm-3">
+							<div class="thumbnail-container">
+								<a href="{{sponsor.url}}" target="_blank"><img src="/media/{{sponsor.logo}}" name="{{sponsor.name}}">
+							</div>
+						</li>
+					{% endfor %}
+					</ul>
+                </div>
+            </div>
+			<br />
+			<div class="col-lg-12 center">
+				<a class="btn btn-default page-scroll" href="{% url 'programme' %}">Become a Sponsor!</a>
+			</div>
+        </div>
     </section>
 {% endblock %}
