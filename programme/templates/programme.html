@@ -1,27 +1,42 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section id="themes">
-        <h3>Conference Themes</h3>
-        <ol>
-            {% for theme in themes %}
-            <li>{{theme.title}}</li>
-            <br />
-            {% endfor %}
-        </ol>
+
+    <section id="programme" class="programme-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="center">Conference Themes</h2>
+                    <ol>
+                    {% for theme in themes %}
+                        <li>{{theme.title}}</li>
+                        <br />
+                    {% endfor %}
+                    </ol>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="guest-speakers">
-        <h3>Guest Speakers</h3>
-        <ul>
-            {% for speaker in speakers %}
-            <li>
-                <img src="/media/{{speaker.pic}}" name="{{speaker.forename}} {{speaker.surname}}">
-                <p>"{{speaker.title}}"
-                <p>{{speaker.forename}} {{speaker.surname}}</p>
-                <p>{{speaker.affiliation}}</p>
-            </li>
-            {% endfor %}
-        </ul>
+    <section id="programme" class="guest-speakers-programme">
+        <div class="container"
+            <div class="row">
+                <div class="col-lg-3">
+                    <h2 class="center">Guest Speakers</h2>
+                    <ul class="list-unstyled">
+                    {% for speaker in speakers %}
+                        <li class="col-sm-3">
+                            <div id="guest-speakers" class="thumbnail-container">
+                            <img src="/media/{{speaker.pic}}" name="{{speaker.forename}} {{speaker.surname}}">
+                            <h4>{{speaker.forename}} {{speaker.surname}}</h4>
+                            <p>{{speaker.affiliation}}</p>
+                            <p title="{{speaker.title}}">"{{speaker.title|slice:":50"}} ..."
+                            </div>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 {% endblock %}

@@ -1,16 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section id="articles">
-        {% for article in articles %}
-        <h2>{{article.title}}</h2>
-        <h3>Article by Nigel Mason, Conference Chair</h3>
-        {% if article.pic %}
-        <img src="/media/{{article.pic}}">
-        {% endif %}
-        <p>{{article.body}}</p>
-        <p>Date: {{article.pub_date}}</p>
-        <br />
-        {% endfor %}
+    <section id="blog" class="blog-section-blog">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="center">Conference Blog</h2>
+                    <div class="articles">
+                    {% for article in articles %}
+                    <h3>{{article.title}}</h4>
+                    <img class="profile-pic" src="/media/committee_img/mason.png">
+                    <h4>Article by Nigel Mason, Conference Chair</h4>
+                    {% if article.pic %}
+                    <div class='blog-pic'>
+                        <img  src="/media/{{article.pic}}">
+                    <div>
+                    {% endif %}
+                    <p>{{article.body}} ...</p>
+                    <p><strong>Date: {{article.pub_date}}</strong></p>
+                    <hr />
+                    <br />
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
     </section>
+    
 {% endblock %}
