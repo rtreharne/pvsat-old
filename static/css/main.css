@@ -99,6 +99,10 @@ img {
     padding-bottom: 50px;
 }
 
+#programme li.col-sm-3 {
+    min-height: 340px;
+}
+
 .sponsor-section {
     background: #eee;
     padding-top: 25px;
