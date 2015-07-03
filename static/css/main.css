@@ -39,7 +39,7 @@ h4 {
 }
 
 .intro-section {
-    padding-top: 18%;
+    padding-top: 16%;
     min-height: 500px;
 }
 
@@ -95,14 +95,24 @@ img {
 
 .programme-page {
     background: #fff;
-    padding-top: 13%;
+    padding-top: 100px;
     padding-bottom: 50px;
 }
 
-#programme li.col-sm-3 {
+.programme-page ol {
+    padding-top: 20px;
+}
+.programme-page li.col-sm-3 {
     min-height: 340px;
 }
 
+#committee {
+    padding-top: 100px;
+}
+
+#committee li.col-sm-3 {
+    min-height: 320px;
+}
 .sponsor-section {
     background: #eee;
     padding-top: 25px;
@@ -117,8 +127,8 @@ img {
     padding-bottom: 10px;
 }
 
-.list-unstyled {
-    padding-top 10px;
+ul.list-unstyled {
+    padding-top: 20px;
     text-align: center;
     overflow:hidden;
 }
