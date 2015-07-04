@@ -39,4 +39,54 @@
             </div>
         </div>
     </section>
+    
+    <section id="exhibitors" class="exhibitors-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+					<h2 class="center">Exhibitors</h2>
+					<ul class="list-unstyled">
+					{% for exhibitor in exhibitors %}
+						<li class="col-sm-3">
+							<div class="thumbnail-container">
+                                <a href="{{exhibitor.url}}" target="_blank"><img src="/media/{{exhibitor.logo}}" name="{{exhibitor.name}}"></a>
+							</div>
+						</li>
+					{% endfor %}
+					</ul>
+                    <p>PVSAT-12 provides opportunities for leading UK companies to interact with the world-leading UK academic photovoltaics community.<p>
+                    <p>We invite potential exhibitors to register by completing the following form:</p><br />
+                        <a href="/static/files/exhibitor_registration.doc" download><span class = "glyphicon glyphicon-file" aria-hidden="true"></span>
+                        <p class="center small">Download<p>
+                    </a>
+                    <p>Each exhibitor is granted two complementary delegate places and unrestricted access to all areas and activities of the conference including conference receptions and both conference dinners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="sponsors" class="sponsor-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+					<h2 class="center">Sponsors</h2>
+					<ul class="list-unstyled">
+					{% for sponsor in sponsors %}
+						<li class="col-sm-3">
+							<div class="thumbnail-container">
+                                <a href="{{sponsor.url}}" target="_blank"><img src="/media/{{sponsor.logo}}" name="{{sponsor.name}}"></a>
+							</div>
+						</li>
+					{% endfor %}
+					</ul>
+                </div>
+            </div>
+			<br />
+            <p>Opportunities exist for named sponsoship of individual elements of the conference, e.g. prizes, receptions, coffee breaks, dinner, proceedings etc.</p>
+            <p>Companies and organisations intereted in sponsorship of PVSAT-12 should contact the Solar Energy Secretariat for further information.</p><br />
+            <a href="/static/files/exhibitor_registration.doc" download><span class = "glyphicon glyphicon-file" aria-hidden="true"></span>
+                <p class="center small">Download<p>
+            </a>
+        </div>
+    </section>
 {% endblock %}
