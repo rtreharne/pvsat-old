@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'committee',
     'exhibitors',
     'blog',
+    'authors',
 
     'sorl.thumbnail'
 )
