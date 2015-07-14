@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from authors.forms import UserForm, UserProfileForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
+from django.core.urlresolvers import reverse
 
 def register(request):
 
@@ -28,7 +29,7 @@ def register(request):
             registered = True
 
         else:
-            print user_form.erros, profile_forms.errors
+            print user_form.errors, profile_form.errors
     
     else:
         user_form = UserForm()
@@ -39,7 +40,6 @@ def register(request):
 			{'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
 def user_login(request):
-    return render(request, 'login.html', {})
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -49,7 +49,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponse('logged in!')
+                return HttpResponseRedirect(reverse('home'))
             else:
                 return HttpResponse("Your account is disabled")
 
@@ -58,6 +58,13 @@ def user_login(request):
             return HttpResponse("Invalid login details supplied")
                 
     else:
-        return render(request, 'login.html', {})
+        if request.user.is_authenticated():
+            return HttpResponseRedirect(reverse('home'))
+        else:
+	    return render(request, 'login.html', {})
+
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect(reverse('home'))
 
     
