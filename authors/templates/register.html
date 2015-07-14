@@ -1,4 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Register</h2>
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+					<h2>Register</h2>
+
+					{% if registered %}
+					<p>Thank you for registering</p>
+					<a href="{% url 'home' %}">Return to homepage</a>
+					{% else %}
+
+					<form id = "user_form" method="post" action="/authors/register/" enctype="multipart/form-data">
+
+						{% csrf_token %}
+
+						{{ user_form.as_ul}}
+						{{ profile_form.as_ul}}
+
+						<input type="submit" name="submit" value="Register" />
+
+					</form>
+					{% endif %}
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

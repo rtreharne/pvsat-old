@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates/')
 TEMPLATE_DIRS = ('',
         TEMPLATE_PATH,
+		os.path.join(BASE_DIR, 'authors/templates/'),
         )
 
 # Application definition

@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     url(r'^blog/', include('blog.urls')),
     url(r'^programme/', include('programme.urls')),
     url(r'^committee/', include('committee.urls')),
+    url(r'^authors/', include('authors.urls')),
 )
 
 if settings.DEBUG:
