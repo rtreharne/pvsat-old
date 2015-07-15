@@ -123,6 +123,20 @@ img {
     padding-bottom: 50px;
 }
 
+.register-section {
+    background: #fff;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+    min-height: 100%;
+}
+
+input[type=submit] {
+    margin: 2%;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
 .footer-section {
     background: black;
     text-align:center;
@@ -201,9 +215,9 @@ form li {
 }
 
 form label {
-    width: 150px;
-    font-size: 1.2em;
-    text-align: right;
+    width: 100px;
+    font-size: 1.0em;
+    text-align: center;
     margin-right: 2px;
 }
 
@@ -212,6 +226,6 @@ form input[type=file] {
 }
 
 form input {
-    width:265px;
+    width:200px;
 }
 

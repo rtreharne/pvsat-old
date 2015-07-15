@@ -1,8 +1,36 @@
 from django.shortcuts import render
-from authors.forms import UserForm, UserProfileForm
+from authors.forms import UserForm, UserProfileForm, AbstractForm
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
+from authors.models import UserProfile, Abstract
+
+@login_required
+def submit_abstract(request):
+    submitted = False
+
+    if request.method == 'POST':
+        abstract_form = AbstractForm(data=request.POST)
+		
+        if abstract_form.is_valid():
+			abstract = abstract_form.save(commit=False)
+			abstract.author= request.user
+
+			if 'upload' in request.FILES:
+			   abstract.upload = request.FILES['upload']
+
+			abstract_form.save()
+
+			submitted = True
+
+        else:
+			print abstract_form.errors
+    
+    else:	    
+	    abstract_form = AbstractForm()
+	
+    return render(request, 'submit_abstract.html', {'abstract_form': abstract_form, 'submitted': submitted})
 
 def register(request):
 
@@ -49,7 +77,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(reverse('dashboard'))
             else:
                 return HttpResponse("Your account is disabled")
 
@@ -67,4 +95,10 @@ def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('home'))
 
+@login_required
+def dashboard(request):
+    user = request.user
+    profile = UserProfile.objects.get(user_id=user.id)
+    abstracts = Abstract.objects.filter(author=user)
+    return render(request, 'dashboard.html', {'user':user, 'profile': profile, 'abstracts': abstracts})
     

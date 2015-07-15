@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from authors.models import UserProfile
+from authors.models import UserProfile, Abstract
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
@@ -17,15 +17,16 @@ class UserForm(forms.ModelForm):
             raise forms.ValidationError(u'Email address has already been registered')
         return email
 
-    def clean_first_name(self):
-        if self.cleaned_data['last_name'].strip() == '':
-            raise ValidationError("This field is required")
-        return self.cleaned_data['first_name']
 
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
 	fields = ('affiliation', 'picture')
+
+class AbstractForm(forms.ModelForm):
+    class Meta:
+        model = Abstract
+	fields = ('title', 'abstract', 'upload', 'delivery')
 
     
 
