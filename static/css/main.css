@@ -168,18 +168,18 @@ ul.list-unstyled {
     text-align: center;
 }
 
-.btn-default {
+/*#intro a.btn.btn-default {
     width: 80%;
     max-width: 300px;
     height: 50px;
     padding-top: 14px;
-}
+}*/
 
-span.glyphicon-file {
+/*span.glyphicon-file {
     display: block;
     text-align: center;
     font-size: 4em;
-}
+}*/
 
 p.center {
     text-align: center;
@@ -253,7 +253,17 @@ p.small {
 	margin: 2% auto;
 }
 
+.abstract-section span.glyphicon-file {
+	font-size: 1em;
+	text-align: left;
+}
+
 /*----------FORMS------------*/
+
+.abstract-section span.glyphicon.glyphicon-file {
+	font-size: 1em;
+	text-align: left;
+}
 form {
     max-width: 900px;
     margin: auto;

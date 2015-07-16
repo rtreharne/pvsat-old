@@ -10,9 +10,13 @@
 					    <img class="profile-pic" src="/media/{{profile.picture}}">
 						<p><strong>Submitted by: </strong>{{abstract.author.first_name}} {{abstract.author.last_name}}, {{profile.affiliation}}</p>
 						<p>{{abstract.abstract}}</p>
-						<button type="button" class="btn btn-default">
-					        <span class="glyphicon glyphicon-file"></span> File
-					    </button>
+						{% if abstract.upload %}
+						<p>
+						<a type="button" class="btn btn-default" href="/media/{{abstract.upload}}" target="_blank">
+					        <span class="glyphicon glyphicon-file"></span> Download 
+						</a>
+						{% endif %}
+						</p>
 						<p><strong>Themes: </strong></p>
 						<p>
 						    <ul>
