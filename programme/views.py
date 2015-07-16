@@ -6,7 +6,7 @@ from authors.models import UserProfile, Abstract
 from django.contrib.auth.models import User
 
 def programme(request):
-    speakers = Speaker.objects.all()
+    speakers = Speaker.objects.order_by('?')[:]
     themes = Theme.objects.all()
     exhibitors = Exhibitor.objects.all()
     sponsors = Sponsor.objects.all()
