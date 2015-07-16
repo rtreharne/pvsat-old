@@ -32,4 +32,9 @@ def profile(request, user_id=1):
                       'abstracts': abstracts}
 	return render(request, 'profile.html', dictionary)
 
+def theme(request, theme_id=1):
+	theme = Theme.objects.get(id=theme_id)
+	abstracts = Abstract.objects.filter(theme=theme_id)
+        return render(request, 'theme.html', {'theme': theme, 'abstracts': abstracts})
+
 

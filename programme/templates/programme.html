@@ -9,7 +9,7 @@
                     <h2 class="center">Conference Themes</h2>
                     <ol>
                     {% for theme in themes %}
-                        <li>{{theme.title}}</li>
+					<li><a href="/programme/themes/{{theme.id}}">{{theme.title}}</a></li>
                         <br />
                     {% endfor %}
                     </ol>
