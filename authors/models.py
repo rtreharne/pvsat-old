@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from programme.models import Theme
 5
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
@@ -20,6 +21,7 @@ class Abstract(models.Model):
     title = models.CharField(max_length=1000)
     abstract = models.TextField(max_length=5000)
     upload = models.FileField(upload_to='abstract_uploads', blank=True)
+    theme = models.ManyToManyField(Theme)
     
     DELIVERY_CHOICE = (('Oral', 'Oral'), ('Poster', 'Poster'))
     delivery = models.CharField(max_length=6, choices=DELIVERY_CHOICE, default='Oral')

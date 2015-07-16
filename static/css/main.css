@@ -73,18 +73,23 @@ h4 {
 }
 
 .profile-pic {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+	margin-bottom: 10px;
     border-radius: 150px;
     -webkit-border-radius: 150px;
     -moz-border-radius: 150px;
     background: url('../../media/committee_img/mason.png') no-repeat;
-                    }
-
 }
 
-img {
-    border: 1px solid red;
+.profile-pic-lg {
+    width: 150px;
+    height: 150px;
+	margin-bottom: 10px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    background: url('../../media/committee_img/mason.png') no-repeat;
 }
 
 .programme-section {
@@ -233,8 +238,20 @@ p.small {
 	margin-top: 15px;
 	margin-bottom: 25px;
 }
+/*---------PROGRAMME---------*/
+/*---------Abstracts---------*/
 
+.abstract-section {
+    background: #fff;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: justify;
+}
 
+.abstract-section div.abstract {
+	max-width:800px;
+	margin: 2% auto;
+}
 
 /*----------FORMS------------*/
 form {

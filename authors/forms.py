@@ -26,7 +26,7 @@ class UserProfileForm(forms.ModelForm):
 class AbstractForm(forms.ModelForm):
     class Meta:
         model = Abstract
-        fields = ('title', 'abstract', 'upload', 'delivery')
+        fields = ('title', 'abstract', 'upload', 'delivery', 'theme')
  
 
     
