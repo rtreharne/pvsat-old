@@ -222,9 +222,18 @@ p.small {
     padding-bottom: 50px;
 }
 
-.dashboard-profile-section span.glyphicon {
-	font-size: 3em;
+.dashboard-profile-section i.fa {
+		margin: 1%;
 }
+
+.dashboard-profile-section p.bio {
+	max-width:500px;
+	text-align:justify;
+	margin: 2% auto;
+	margin-top: 15px;
+	margin-bottom: 25px;
+}
+
 
 
 /*----------FORMS------------*/

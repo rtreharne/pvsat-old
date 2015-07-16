@@ -8,6 +8,7 @@ class UserProfile(models.Model):
     url = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
     twitter = models.URLField(blank=True)
+    bio = models.TextField(max_length=2000, blank=True)
     
 
     def __unicode__(self):

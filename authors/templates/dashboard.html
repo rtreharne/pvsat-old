@@ -9,13 +9,19 @@
 					<img src="/media/{{profile.picture}}" name="{{user.first_name}} {{user.last_name}}">
 					<h3>{{profile.affiliation}}</h3>
 					<p>
-					    {% if profile.url %}
-						<a href="{{profile.url}}" target="_blank"><span class="glyphicon glyphicon-globe"></span></a>
+						{% if profile.url %}
+						<a href="{{profile.url}}" target="_blank"><i class="fa fa-globe fa-3x"></i></a>
 						{% endif %}
-					    {% if profile.twitter %}
-						<a href="{{profile.twitter}}" target="_blank"><span class="glyphicon glyphicon-globe"></span></a>
+						{% if profile.linkedin %}
+						<a href="{{profile.linkedin}}" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a>
+						{% endif %}
+						{% if profile.twitter %}
+						<a href="{{profile.twitter}}" target="_blank"><i class="fa fa-twitter-square fa-3x"></i></a>
 						{% endif %}
 					</p>
+					{% if profile.bio %}
+					<p class="bio">{{profile.bio}}</p>
+					{% endif %}
 					<div class="col-lg-12 center">
 						<a class="btn btn-default page-scroll" href="{% url 'update_profile' %}">Update Profile</a>
 					</div>
