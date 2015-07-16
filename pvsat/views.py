@@ -8,7 +8,7 @@ from random import shuffle
 
 def home(request):
     sponsor_list = Sponsor.objects.all()
-    speaker_list = Speaker.objects.all()
+    speaker_list = Speaker.objects.order_by('?')[:]
     article = Article.objects.latest('pub_date')
     dict = {'speakers': speaker_list,
             'sponsors': sponsor_list,

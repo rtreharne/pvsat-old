@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section id="register" class="dashboard-profile-section">
+    <section id="profile" class="dashboard-profile-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
 					<h2>{{user.first_name}} {{user.last_name}}</h2>
-					<a href="/programme/profiles/{{user.id}}"><img class="profile-pic-lg" src="/media/{{profile.picture}}" name="{{user.first_name}} {{user.last_name}}"></a>
+					<img class="profile-pic-lg" src="/media/{{profile.picture}}" name="{{user.first_name}} {{user.last_name}}">
 					<h3>{{profile.affiliation}}</h3>
 					<p>
 						{% if profile.url %}
@@ -22,9 +22,6 @@
 					{% if profile.bio %}
 					<p class="bio">{{profile.bio}}</p>
 					{% endif %}
-					<div class="col-lg-12 center">
-						<a class="btn btn-default page-scroll" href="{% url 'update_profile' %}">Update Profile</a>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -34,20 +31,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-					<h2>My Abstracts</h2>
+					<h2>{{user.first_name}}'s Abstracts</h2>
 					{% if abstracts %}
 						<table class="tg">
 						  <tr>
-							<th class="tg-031e">id</th>
 							<th class="tg-031e">Title</th>
 							<th class="tg-031e">File</th>
-							<th class="tg-031e">Status</th>
 							<th class="tg-031e">Presentation</th>
 						  </tr>
 						{% for abstract in abstracts %}
 						  <tr>
-							  <td class="tg-4eph">{{abstract.id}}</td>
-							  <td class="tg-4eph">{{abstract.title|slice:":50"}} ...</td>
+							  <td class="tg-4eph"><a href="/programme/abstracts/{{abstract.id}}">{{abstract.title|slice:":50"}} ...</a></td>
 							  <td class="tg-4eph">
 								  {% if abstract.upload %}
 								  <a href="/media/{{abstract.upload}}" target="_blank" >
@@ -55,7 +49,6 @@
 								  </a>
 								  {% endif %}
 							  </td>
-							  <td class="tg-4eph">{{abstract.status}}</td>
 							  <td class="tg-4eph">{{abstract.delivery}}</td>
 						  </tr>
 						{% endfor %}
@@ -63,9 +56,6 @@
 					{% else %}
 					    <p>No abstracts submitted<p>
 				    {% endif %}
-					<div class="col-lg-12 center">
-						<a class="btn btn-default page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
-					</div>
                 </div>
             </div>
 		</div>
