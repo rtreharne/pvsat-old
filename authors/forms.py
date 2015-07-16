@@ -21,12 +21,13 @@ class UserForm(forms.ModelForm):
 class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-	fields = ('affiliation', 'picture')
+        fields = ('affiliation', 'picture', 'url', 'linkedin', 'twitter')
 
 class AbstractForm(forms.ModelForm):
     class Meta:
         model = Abstract
-	fields = ('title', 'abstract', 'upload', 'delivery')
+        fields = ('title', 'abstract', 'upload', 'delivery')
+ 
 
     
 

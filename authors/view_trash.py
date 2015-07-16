@@ -8,29 +8,29 @@ from authors.models import UserProfile, Abstract
 
 @login_required
 def update_profile(request):
-    submitted = False
-    inst = UserProfile.objects.get(user=request.user)
-
-    if request.method == 'POST':
-        profile_form = UserProfileForm(data=request.POST, instance=inst)
-        if profile_form.is_valid():
-            profile = profile_form.save(commit=False)
-            profile.user= request.user
-
-            if 'picture' in request.FILES:
-                profile.picture = request.FILES['picture']
-
-            profile.save()
-
-            submitted=True
-
-        else:
-            print profile_form.errors
-        
-    else:
-        profile_form = UserProfileForm(instance=inst)
-    
     return render(request, 'update_profile.html', {'profile_form': profile_form, 'submitted': submitted})
+   ''' submitted = False
+    if request.method == 'POST':
+		inst = UserProfile.objects.get(user=request.user)
+		profile_form = UserProfileForm(data=request.POST, instance=inst)
+if form.is_valid():
+profile = profile_form.save(commit=False)
+profile.user = user
+
+if 'picture' in request.FILES:
+profile.picture = request.FILES['picture']
+
+profile.save()
+
+submitted=True
+else:
+print profile_form.errors
+
+    else:
+		inst=UserProfile.objects.get(user=request.user)
+		profile_form = UserProfileForm(instance=inst)
+'''		
+
 
 @login_required
 def submit_abstract(request):

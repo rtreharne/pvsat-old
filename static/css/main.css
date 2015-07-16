@@ -202,11 +202,37 @@ p.small {
     max-width: 100%;
 }
 
+/*----------DASHBOARD-----------*/
+ 
+.dashboard-profile-section {
+    background: #fff;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.dashboard-profile-section img {
+	max-width: 150px;
+}
+
+.dashboard-abstract-section {
+    background: #eee;
+    padding-top: 15px;
+    text-align:center;
+    padding-bottom: 50px;
+}
+
+.dashboard-profile-section span.glyphicon {
+	font-size: 3em;
+}
+
+
 /*----------FORMS------------*/
 form {
     max-width: 900px;
     margin: auto;
     padding: 2% 2%;
+	padding-bottom: 0;
 }
 
 form li {
@@ -228,4 +254,21 @@ form input[type=file] {
 form input {
     width:200px;
 }
+label[for="picture-clear_id"] {
+	display: none;
+}
+input[id="picture-clear_id"] {
+	display:none;
+}
+/*------------TABLES-----------*/
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg .tg-4eph{background-color:#f9f9f9}
 
+table {
+	margin: 2% auto;
+}
+table span.glyphicon-file {
+	font-size: 2em;
+}
