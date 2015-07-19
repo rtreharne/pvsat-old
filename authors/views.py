@@ -41,7 +41,7 @@ def submit_abstract(request):
 		
         if abstract_form.is_valid():
 			abstract = abstract_form.save(commit=False)
-			abstract.author= request.user
+			abstract.author = UserProfile.objects.get(user=request.user)
 
 			if 'upload' in request.FILES:
 			   abstract.upload = request.FILES['upload']
@@ -125,6 +125,6 @@ def user_logout(request):
 def dashboard(request):
     user = request.user
     profile = UserProfile.objects.get(user_id=user.id)
-    abstracts = Abstract.objects.filter(author=user)
+    abstracts = Abstract.objects.filter(author=profile)
     return render(request, 'dashboard.html', {'user':user, 'profile': profile, 'abstracts': abstracts})
     

@@ -43,6 +43,7 @@
 							<th class="tg-031e">File</th>
 							<th class="tg-031e">Status</th>
 							<th class="tg-031e">Presentation</th>
+							<th class="tg-031e">Options</th>
 						  </tr>
 						{% for abstract in abstracts %}
 						  <tr>
@@ -57,6 +58,8 @@
 							  </td>
 							  <td class="tg-4eph">{{abstract.status}}</td>
 							  <td class="tg-4eph">{{abstract.delivery}}</td>
+							  <td class="tg-4eph">{% if abstract.status == 'Accepted' %}<a class="btn btn-default page-scroll" href="#">Submit Paper</a>{% endif %}</td>
+
 						  </tr>
 						{% endfor %}
 						</table>		

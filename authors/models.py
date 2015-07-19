@@ -1,7 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from programme.models import Theme
-5
+from django.utils import timezone
+from time import time
+
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
     affiliation = models.CharField(max_length=128)
@@ -17,7 +19,7 @@ class UserProfile(models.Model):
 
 class Abstract(models.Model):
     #unique_id = ??    
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(UserProfile)
     title = models.CharField(max_length=1000)
     abstract = models.TextField(max_length=5000)
     upload = models.FileField(upload_to='abstract_uploads', blank=True)
@@ -28,6 +30,8 @@ class Abstract(models.Model):
 
     STATUS = (('Awaiting Decision', 'Awaiting decision'), ('Accepted', 'Accept'), ('Rejected', 'Reject') )
     status = models.CharField(max_length=25, choices=STATUS, default='Awaiting Decision')
+
+    date = models.DateTimeField(default=timezone.datetime.today())
 
 
     def __unicode__(self):

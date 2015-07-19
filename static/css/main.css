@@ -286,19 +286,50 @@ form input[type=file] {
     display:inline;
 }
 
-form input {
-    width:200px;
+form input, textarea {
+    width: 90%;
+	max-width: 350px;
+	margin: auto;
 }
+
+form label {
+	vertical-align: top;
+}
+
 label[for="picture-clear_id"] {
 	display: none;
 }
 input[id="picture-clear_id"] {
 	display:none;
 }
+
+form div.file-input {
+	text-align: left;
+	display:inline-block;
+	width:90%;
+	max-width:350px;
+	margin:auto;
+	line-height: 2em;
+}
+form input#id_picture {
+	display: inline-block;
+	width:80%;
+}
+
+form select {
+	width: 90%;
+	max-width: 350px;
+}
+
+form span{
+	display:block;
+	font-size: 0.8em;
+	line-height:2em;
+}
 /*------------TABLES-----------*/
 .tg  {border-collapse:collapse;border-spacing:0;border-color:#ccc;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
+.tg td{text-align:center;font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;}
+.tg th{text-align:center;font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;}
 .tg .tg-4eph{background-color:#f9f9f9}
 
 table {

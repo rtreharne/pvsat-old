@@ -7,8 +7,8 @@
                 <div class="col-lg-12">
 					<h2>{{abstract.title}}</h2>
 					<div class="abstract">
-						<a href="/programme/profiles/{{abstract.author.id}}"><img class="profile-pic" src="/media/{{profile.picture}}"></a>
-						<p><strong>Submitted by: </strong>{{abstract.author.first_name}} {{abstract.author.last_name}}, {{profile.affiliation}}</p>
+						<a href="/programme/profiles/{{abstract.author.user.id}}"><img class="profile-pic" src="/media/{{abstract.author.picture}}"></a>
+						<p><strong>Submitted by: </strong>{{abstract.author.user.first_name}} {{abstract.author.user.last_name}}, {{abstract.author.affiliation}}</p>
 						<p>{{abstract.abstract}}</p>
 						{% if abstract.upload %}
 						<p>
@@ -25,6 +25,7 @@
 							{% endfor %}
 							</ul>
 						</p>
+						<p><strong>Status: </strong>{{abstract.status}}</p>
 								
 				</div>
 			</div>

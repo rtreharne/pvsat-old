@@ -19,9 +19,13 @@ class UserForm(forms.ModelForm):
 
 
 class UserProfileForm(forms.ModelForm):
-    class Meta:
-        model = UserProfile
-        fields = ('affiliation', 'picture', 'bio', 'url', 'linkedin', 'twitter')
+	def __init__(self, *args, **kwargs):
+		super(UserProfileForm, self).__init__(*args, **kwargs)
+		self.fields['picture'].label = 'Picture'
+
+        class Meta:
+            model = UserProfile
+            fields = ('affiliation', 'picture', 'bio', 'url', 'linkedin', 'twitter')
 
 class AbstractForm(forms.ModelForm):
     class Meta:

@@ -17,7 +17,8 @@
 						{% csrf_token %}
 
 						{{ user_form.as_ul}}
-						{{ profile_form.as_ul}}
+							<li><label>Affiliation:</label>{{profile_form.affiliation}}</li>
+							
 
 						<input class="btn btn-default page-scroll" type="submit" name="submit" value="Register" />
 

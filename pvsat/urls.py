@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^programme/', include('programme.urls')),
     url(r'^committee/', include('committee.urls')),
     url(r'^authors/', include('authors.urls')),
+	url(r'^contact/', include('message.urls')),
 )
 
 if settings.DEBUG:

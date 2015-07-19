@@ -41,7 +41,7 @@
 						  </tr>
 						{% for abstract in abstracts %}
 						  <tr>
-							  <td class="tg-4eph"><a href="/programme/abstracts/{{abstract.id}}">{{abstract.title|slice:":50"}} ...</a></td>
+							  <td class="tg-4eph"><a href="/programme/abstracts/{{abstract.id}}">{{abstract.title|slice:":100"}} ...</a></td>
 							  <td class="tg-4eph">
 								  {% if abstract.upload %}
 								  <a href="/media/{{abstract.upload}}" target="_blank" >
