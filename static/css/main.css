@@ -1,3 +1,8 @@
+/*------BUTTONS-------*/
+.btn-primary {
+	width: 200px;
+}
+
 h3 {
     font-size: 20px;
 }
@@ -16,6 +21,17 @@ h4 {
 
 #guest-speakers li {
     display: block;
+}
+
+p.justify {
+	text-align: justify;
+}
+
+/*--------SECTIONS----------*/
+.white-section {
+    background: #fff;
+    padding-top: 25px;
+    padding-bottom: 50px;
 }
 
 .guest-speakers-programme {
@@ -59,6 +75,8 @@ h4 {
     border: 1px solid #eee;
     margin: 2% 0%;
     max-width: 100%;
+	max-height: 300px;
+	
     
 }
 
@@ -79,7 +97,6 @@ h4 {
     border-radius: 150px;
     -webkit-border-radius: 150px;
     -moz-border-radius: 150px;
-    background: url('../../media/committee_img/mason.png') no-repeat;
 }
 
 .profile-pic-lg {
@@ -153,6 +170,10 @@ ul.list-unstyled {
     padding-top: 20px;
     text-align: center;
     overflow:hidden;
+}
+
+ul {
+	padding: 0;
 }
 
 .list-unstyled li {
@@ -259,6 +280,10 @@ p.small {
 
 /*----------FORMS------------*/
 
+ul.errorlist {
+	color: red;
+}
+
 .abstract-section span.glyphicon.glyphicon-file {
 	font-size: 1em;
 	text-align: left;
@@ -287,7 +312,7 @@ form input[type=file] {
 }
 
 form input, textarea {
-    width: 90%;
+    width: 100%;
 	max-width: 350px;
 	margin: auto;
 }
@@ -336,5 +361,13 @@ table {
 	margin: 2% auto;
 }
 table span.glyphicon-file {
+	font-size: 2em;
+}
+
+span.helptext {
+	margin-bottom: 20px;
+}
+
+p.share {
 	font-size: 2em;
 }

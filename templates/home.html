@@ -11,9 +11,9 @@
             <p>Organized by <a href="http://www.uk-ises.org/">The Solar Energy Society (UK-ISES)</a></p>
 		    <br />
 		    <ul class="list-unstyled">
-		        <li><a class="btn btn-default page-scroll" href="">Register Now!</a></li>
-			<li><a class="btn btn-default page-scroll" href="{% url 'submit_abstract' %}">Submit an Abstract</a></li>
-			<li><a class="btn btn-default page-scroll" href="">Apply for a Bursary</a></li>
+		        <li><a class="btn btn-primary page-scroll" href="">Register Now!</a></li>
+			<li><a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit an Abstract</a></li>
+			<li><a class="btn btn-primary page-scroll" href="">Apply for a Bursary</a></li>
 		    </ul>
                 </div>
             </div>
@@ -23,7 +23,7 @@
     <section id="blog" class="blog-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-8 col-sm-offset-2">
                     <h2 class="center">Blog</h2>
                     <h3>{{articles.title}}</h4>
                     <p>{{articles.body|slice:":255"}} ...</p>
@@ -31,7 +31,7 @@
             </div>
 			<br />
 			<div class="col-lg-12 center">
-				<a class="btn btn-default page-scroll" href="{% url 'articles' %}">Read More</a>
+				<a class="btn btn-primary page-scroll" href="{% url 'articles' %}">Read More</a>
 			</div>
         </div>
     </section>
@@ -45,7 +45,7 @@
 			{% for speaker in speakers|slice:":4" %}
 			<li class="col-sm-3">
 			    <div class="thumbnail-container">
-				<img src="/media/{{speaker.pic}}" name="{{speaker.forename}} {{speaker.surname}}">
+				<img class="profile-pic-lg" src="/media/{{speaker.pic}}" name="{{speaker.forename}} {{speaker.surname}}">
 				<h4>{{speaker.forename}} {{speaker.surname}}</h4>
 				<p>{{speaker.affiliation}}</p>
                 <p title="{{speaker.title}}">"{{speaker.title|slice:":50"}} ..."
@@ -57,7 +57,7 @@
             </div>
 			<br />
 			<div class="col-lg-12 center">
-				<a class="btn btn-default page-scroll" href="{% url 'programme' %}">Full Programme</a>
+				<a class="btn btn-primary page-scroll" href="{% url 'programme' %}">Full Programme</a>
 			</div>
         </div>
         <ul>
@@ -81,7 +81,7 @@
             </div>
 			<br />
 			<div class="col-lg-12 center">
-				<a class="btn btn-default page-scroll" href="{% url 'programme' %}#sponsors">Become a Sponsor!</a>
+				<a class="btn btn-primary page-scroll" href="{% url 'programme' %}#sponsors">Become a Sponsor!</a>
 			</div>
         </div>
     </section>

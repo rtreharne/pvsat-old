@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from authors.models import UserProfile, Abstract
+from django.contrib.auth.forms import UserCreationForm
 
 @login_required
 def update_profile(request):
@@ -68,8 +69,6 @@ def register(request):
 
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
-
-            user.set_password(user.password)
             user.save()
 
             profile = profile_form.save(commit=False)

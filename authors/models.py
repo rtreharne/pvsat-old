@@ -6,7 +6,7 @@ from time import time
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User)
-    affiliation = models.CharField(max_length=128)
+    affiliation = models.CharField(max_length=128, blank = True)
     picture = models.ImageField(upload_to='user_images', default='static/img/avatar.png')
     url = models.URLField(blank=True)
     linkedin = models.URLField(blank=True)
@@ -18,7 +18,6 @@ class UserProfile(models.Model):
         return self.user.username
 
 class Abstract(models.Model):
-    #unique_id = ??    
     author = models.ForeignKey(UserProfile)
     title = models.CharField(max_length=1000)
     abstract = models.TextField(max_length=5000)

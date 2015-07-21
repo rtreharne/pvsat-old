@@ -32,6 +32,7 @@ TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates/')
 TEMPLATE_DIRS = ('',
         TEMPLATE_PATH,
 		os.path.join(BASE_DIR, 'authors/templates/'),
+                os.path.join(BASE_DIR, 'blog/templates/'),
         )
 
 # Application definition
@@ -50,6 +51,7 @@ INSTALLED_APPS = (
     'blog',
     'authors',
     'message',
+    'forms',
 
     'sorl.thumbnail'
 )

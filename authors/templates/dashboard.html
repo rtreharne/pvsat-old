@@ -23,7 +23,7 @@
 					<p class="bio">{{profile.bio}}</p>
 					{% endif %}
 					<div class="col-lg-12 center">
-						<a class="btn btn-default page-scroll" href="{% url 'update_profile' %}">Update Profile</a>
+						<a class="btn btn-primary page-scroll" href="{% url 'update_profile' %}">Update Profile</a>
 					</div>
 				</div>
 			</div>
@@ -58,7 +58,16 @@
 							  </td>
 							  <td class="tg-4eph">{{abstract.status}}</td>
 							  <td class="tg-4eph">{{abstract.delivery}}</td>
-							  <td class="tg-4eph">{% if abstract.status == 'Accepted' %}<a class="btn btn-default page-scroll" href="#">Submit Paper</a>{% endif %}</td>
+							  <td class="tg-4eph">
+								  {% if abstract.status == 'Accepted' %}
+								      {% if abstract.delivery == 'Oral' %}
+										  <a class="btn btn-success page-scroll" href="#">Submit Paper</a>
+									  {% else %}
+										  <a class="btn btn-success page-scroll" href="#">Submit Poster</a>
+								      {% endif %}
+								  {% endif %}
+							  </td>
+									  
 
 						  </tr>
 						{% endfor %}
@@ -67,10 +76,35 @@
 					    <p>No abstracts submitted<p>
 				    {% endif %}
 					<div class="col-lg-12 center">
-						<a class="btn btn-default page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
+						<a class="btn btn-primary page-scroll" href="{% url 'submit_abstract' %}">Submit New Abstract</a>
 					</div>
                 </div>
             </div>
 		</div>
     </section>
+
+    <section id="register" class="white-section">
+        <div class="container">
+            <div class="row center">
+                <div class="col-lg-8 col-sm-offset-2">
+					<h2 class="center">Author Guidance</h2>
+					<p class="justify">When submitting abstract, paper or poster files please adhere rigidly to the guidance in the templates below. Documents that do not conform will be returned to authors for further editing. If you have any problems submitting then please don't hesitate to <a href="/contact/">contact us</a>.</p>
+					<p>
+					<a type="button" class="btn btn-primary" href="/media/forms/abstract_template.docx">
+						<span class="glyphicon glyphicon-file"></span> Abstract Template</span> 
+					</a>
+		            </p>
+					<p>
+					<a type="button" class="btn btn-primary" href="/media/forms/paper_template.docx">
+						<span class="glyphicon glyphicon-file"></span> Paper Template</span> 
+					</a>
+					<p>
+					<a type="button" class="btn btn-primary" href="/media/forms/poster_template.pptx">
+						<span class="glyphicon glyphicon-file"></span> Poster Template</span> 
+					</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}
