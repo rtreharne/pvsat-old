@@ -17,7 +17,7 @@
                         <img  src="/media/{{article.pic}}">
                     <div>
                     {% endif %}
-                    <p>{{article.body}} ...</p>
+                    <p>{{article.body|slice:":50"}}</p>
 					<p class="share">
 					<a href="https://twitter.com/intent/tweet?text='{{article.title|slice:":50"}} ...' by {{article.author.author.user.first_name}} {{article.author.author.user.last_name}} robtreharne.pythonanywhere.com/blog/{{article.id}}/ @PVSAT12 @livuni %23pvsatblog" target=="_blank"><i class="fa fa-twitter-square"></i></a>
 					<a href="https://www.facebook.com/sharer/sharer.php?u=robtreharne.pythonanywhere.com/blog/{{article.id}}/" target="_blank"><i class="fa fa-facebook-square"></i></a>

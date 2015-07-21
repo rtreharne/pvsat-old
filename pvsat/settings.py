@@ -52,6 +52,7 @@ INSTALLED_APPS = (
     'authors',
     'message',
     'forms',
+    'venue',
 
     'sorl.thumbnail'
 )

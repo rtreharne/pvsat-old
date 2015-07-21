@@ -22,6 +22,7 @@
     <!-- Custom CSS -->
     <link href="{% static  'css/scrolling-nav.css' %}" rel="stylesheet">
     <link href="{% static 'css/main.css' %}" rel="stylesheet" media="screen">
+	<link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,10 +80,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Venue<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{% url 'programme' %}#themes">UoL</a></li>
-                            <li><a href="{% url 'programme' %}#speakers">Accommodation</a></li>
-                            <li><a href="{% url 'programme' %}#exhibitors">Getting There</a></li>
-                            <li><a href="http://itsliverpool.com">#itsliverpool</a></li>
+                            <li><a href="{% url 'venue' %}">UoL</a></li>
                         </ul>
                     </li>
                     <li>

@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     url(r'^committee/', include('committee.urls')),
     url(r'^authors/', include('authors.urls')),
 	url(r'^contact/', include('message.urls')),
+	url(r'^venue/', include('venue.urls')),
 )
 
 if settings.DEBUG:
