@@ -75,7 +75,7 @@
                     </div>
                     <div class="panel-body">
 						<p class="justify"><a href="{% url 'home' %}">PVSAT-12</a> will be held at UoL's Central Teaching Hub (CTH). The building -  purpose built for our undergraduate teaching in <a href="https://www.liv.ac.uk/chemistry/" target="_blank">Chemistry</a>, <a href="http://www.liv.ac.uk/physics/" target="_blank">Physics</a>, <a href="https://www.liv.ac.uk/environmental-sciences/" target+"_blank">Environmental Sciences</a> and <a href="https://www.liv.ac.uk/archaeology-classics-and-egyptology/" target="_blank">Archaeology</a> - is a perfect conference venue, with open atriums for exhibitors and poster presentations as well as a suite of state of the art lecture theatres.</p>
-                        <a href="http://www.liv.ac.uk/central-teaching-hub/" target="_blank" class="btn btn-primary">More Info</a>
+                        <a href="#" class="btn btn-primary">More Info</a>
                     </div>
                 </div>
             </div>
@@ -85,62 +85,26 @@
                         <h4>World Class Energy Research</h4>
                     </div>
                     <div class="panel-body">
-						<p class="justify"><a href="https://www.liv.ac.uk/renewable-energy/" target="_blank">The Stephenson Institute for Renewable Energy</a> (located directly opposite the CTH) is dedicated to exploring the future of renewable, clean and sustainable energy technology. A primary focus of this research is thin-film photovoltaics which is led by <a href="https://www.liv.ac.uk/renewable-energy/people-stephenson-institute-for-renewable-energy/ken-durose/" target="_blank">Prof. Ken Durose's group</a>. We look forward to showing you around our research labsi.</p>
-						<a href="https://www.liv.ac.uk/renewable-energy/" target="_blank" class="btn btn-primary">More Info</a>
+                        <p>The Stephenson Institute for Renewable Energy (located directly opposite the CTH)</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h4>CDT-PV</h4>
+                        <h4><i class="fa fa-fw fa-compass"></i> Easy to Use</h4>
                     </div>
                     <div class="panel-body">
-						<p class="justify">UoL is the lead co-ordinator of the <a href="http://cdt-pv.org" target="_blank">Center for Doctoral Training in New and Sustainable Photovoltaics</a>. The CDT will train over 60 PhD researchers with a curriculum dedicated to PV. Our first two cohorts will be attending PVSAT-12. Please don't be afraid to say hello to this group of highly enthusiastic and well informed researchers.</p>
-                        <a href="https://cdt-pv.org" class="btn btn-primary">More Info</a>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque, optio corporis quae nulla aspernatur in alias at numquam rerum ea excepturi expedita tenetur assumenda voluptatibus eveniet incidunt dicta nostrum quod?</p>
+                        <a href="#" class="btn btn-default">Learn More</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Portfolio Section -->
-        <div id="dinner" class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">Conference Dinner</h2>
-				<a href="http://theathenaeum.org.uk" target="_blank"><img class="dinner-logo" src="/static/img/athenaeum_logo.png"></a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="/static/img/ath_1.jpg">
-                    <img class="img-responsive img-portfolio img-hover" src="/static/img/ath_1.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="/static/img/ath_2.jp">
-                    <img class="img-responsive img-portfolio img-hover" src="/static/img/ath_2.jpg" alt="">
-                </a>
-            </div>
-            <div class="col-md-4 col-sm-6">
-                <a href="/static/img/ath_3.jpg">
-                    <img class="img-responsive img-portfolio img-hover" src="/static/img/ath_3.jpg" alt="">
-                </a>
-            </div>
-			<div class="col-lg-12">
-					<a type="button" class="btn btn-primary" href="/media/forms/menu.pdf">
-						<span class="glyphicon glyphicon-file"></span> Menu</span> 
-					</a>
-			</div>
-        </div>
-        <!-- /.row -->
-		
-        <!-- Portfolio Section -->
-        <div id="map" class="row">
-            <div class="col-lg-12">
-                <h2 class="page-header">A Useful Map</h2>
-				<iframe src="https://www.google.com/maps/d/u/0/embed?mid=z4gaGIgyT6J0.kDJK1cnDO2es" width="640" height="480" frameborder="0" scrolling="no"></iframe>
-			</div>
-        </div>
-        <!-- /.row -->
 	</div>
+        <!-- /.row -->
     <script>
     $('.carousel').carousel({
         interval: 5000 //changes the speed
