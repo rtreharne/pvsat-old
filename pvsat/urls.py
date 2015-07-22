@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^authors/', include('authors.urls')),
 	url(r'^contact/', include('message.urls')),
 	url(r'^venue/', include('venue.urls')),
+	url(r'^bursary/', include('bursary.urls')),
 )
 
 if settings.DEBUG:

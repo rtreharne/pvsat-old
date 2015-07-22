@@ -57,6 +57,8 @@ p.justify {
 .intro-section {
     padding-top: 10%;
     min-height: 500px;
+	/*background-image: url('/static/img/background_1.jpg');*/
+	color:#272727;
 }
 
 .blog-section {

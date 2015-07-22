@@ -33,6 +33,7 @@ TEMPLATE_DIRS = ('',
         TEMPLATE_PATH,
 		os.path.join(BASE_DIR, 'authors/templates/'),
                 os.path.join(BASE_DIR, 'blog/templates/'),
+                os.path.join(BASE_DIR, 'bursary/templates/'),
         )
 
 # Application definition
@@ -53,6 +54,7 @@ INSTALLED_APPS = (
     'message',
     'forms',
     'venue',
+    'bursary',
 
     'sorl.thumbnail'
 )
