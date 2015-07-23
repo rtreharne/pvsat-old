@@ -1,6 +1,8 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 
 {% block content %}
+{% load thumbnail %}
 
     <section id="themes" class="programme-page">
         <div class="container">
@@ -25,12 +27,12 @@
                     <h2 class="center">Guest Speakers</h2>
                     <ul class="list-unstyled">
                     {% for speaker in speakers %}
-                        <li class="col-sm-3">
+                        <li class="col-sm-3 col-xs-6">
                             <div id="guest-speakers" class="thumbnail-container">
                             <img class="profile-pic-lg" src="/media/{{speaker.pic}}" name="{{speaker.forename}} {{speaker.surname}}">
                             <h4>{{speaker.forename}} {{speaker.surname}}</h4>
                             <p>{{speaker.affiliation}}</p>
-                            <p title="{{speaker.title}}">"{{speaker.title|slice:":50"}} ..."
+							<!--<p title="{{speaker.title}}">"{{speaker.title|slice:":50"}} ..."-->
                             </div>
                         </li>
                     {% endfor %}
@@ -100,4 +102,24 @@
 			</div>
         </div>
     </section>
+
+    <section id="contributors" class="exhibitors-section">
+        <div class="container center">
+            <div class="row">
+                <div class="col-lg-12">
+					<h2 class="center">Contributors</h2>
+					{% for author in authors %}
+					<a href="/programme/profiles/{{author.user.id}}">
+					    <div style="min-height: 110px;" class="col-md-2 col-sm-3 col-xs-4">
+							{% thumbnail author.picture "100x100" crop="center" as im %}
+							<img class="profile-pic" src="{{im.url}}">
+							<p>{{author.user.first_name}} {{author.user.last_name}}</p>
+							{% endthumbnail %}
+						</div>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}

@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block content %}
     <section id="abstract" class="abstract-section">
@@ -7,7 +8,9 @@
                 <div class="col-lg-12">
 					<h2>{{abstract.title}}</h2>
 					<div class="abstract">
-						<a href="/programme/profiles/{{abstract.author.user.id}}"><img class="profile-pic" src="/media/{{abstract.author.picture}}"></a>
+							{% thumbnail abstract.author.picture "100x100" crop="center" as im %}
+							<img class="profile-pic" src="{{im.url}}">
+							{% endthumbnail %}
 						<p><strong>Submitted by: </strong><a href="/programme/profiles/{{abstract.author.user.id}}">{{abstract.author.user.first_name}} {{abstract.author.user.last_name}}</a>, {{abstract.author.affiliation}}</p>
 						<p>{{abstract.abstract|linebreaks}}</p>
 						{% if abstract.upload %}

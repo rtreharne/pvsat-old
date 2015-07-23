@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load thumbnail %}
 
 {% block content %}
     <section id="profile" class="dashboard-profile-section">
@@ -6,7 +7,9 @@
             <div class="row">
                 <div class="col-lg-12">
 					<h2>{{user.first_name}} {{user.last_name}}</h2>
-					<img class="profile-pic-lg" src="/media/{{profile.picture}}" name="{{user.first_name}} {{user.last_name}}">
+					{% thumbnail profile.picture "150x150" crop="center" as im %}
+					<img class="profile-pic-lg" src="{{im.url}}" name="{{user.first_name}} {{user.last_name}}">
+					{% endthumbnail %}
 					<h3>{{profile.affiliation}}</h3>
 					<p>
 						{% if profile.url %}

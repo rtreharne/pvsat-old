@@ -10,10 +10,12 @@ def programme(request):
     themes = Theme.objects.all()
     exhibitors = Exhibitor.objects.all()
     sponsors = Sponsor.objects.all()
+    authors = UserProfile.objects.order_by('user__last_name')
     programme_dict = {'speakers': speakers,
                       'themes': themes,
                       'exhibitors': exhibitors,
-                      'sponsors': sponsors}
+                      'sponsors': sponsors,
+                      'authors': authors}
     return render(request, 'programme.html', programme_dict)
 
 def abstract(request, abstract_id=1):
