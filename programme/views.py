@@ -18,6 +18,9 @@ def programme(request):
                       'authors': authors}
     return render(request, 'programme.html', programme_dict)
 
+def abstracts(request):
+    abstracts = Abstract.objects.all()
+    return render(request, 'abstracts.html', {'abstracts': abstracts})
 def abstract(request, abstract_id=1):
      abstract = Abstract.objects.get(id=abstract_id)
      dictionary = {'abstract': abstract}
@@ -26,7 +29,7 @@ def abstract(request, abstract_id=1):
 def profile(request, user_id=1):
 	user = User.objects.get(id=user_id)
 	profile = UserProfile.objects.get(user_id=user.id)
-        abstracts = Abstract.objects.filter(author=profile, status='Accepted')
+        abstracts = Abstract.objects.filter(author=profile)#, status='Accepted')
 	dictionary = {'user': user,
                       'profile': profile,
                       'abstracts': abstracts}
@@ -34,7 +37,7 @@ def profile(request, user_id=1):
 
 def theme(request, theme_id=1):
 	theme = Theme.objects.get(id=theme_id)
-	abstracts = Abstract.objects.filter(theme=theme_id, status='Accepted')
+	abstracts = Abstract.objects.filter(theme=theme_id)#, status='Accepted')
         return render(request, 'theme.html', {'theme': theme, 'abstracts': abstracts})
 
 
