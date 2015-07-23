@@ -8,14 +8,20 @@
 					<h2>{{abstract.title}}</h2>
 					<div class="abstract">
 						<a href="/programme/profiles/{{abstract.author.user.id}}"><img class="profile-pic" src="/media/{{abstract.author.picture}}"></a>
-						<p><strong>Submitted by: </strong>{{abstract.author.user.first_name}} {{abstract.author.user.last_name}}, {{abstract.author.affiliation}}</p>
-						<p>{{abstract.abstract}}</p>
+						<p><strong>Submitted by: </strong><a href="/programme/profiles/{{abstract.author.user.id}}">{{abstract.author.user.first_name}} {{abstract.author.user.last_name}}</a>, {{abstract.author.affiliation}}</p>
+						<p>{{abstract.abstract|linebreaks}}</p>
 						{% if abstract.upload %}
 						<p>
 						<a type="button" class="btn btn-default" href="/media/{{abstract.upload}}" target="_blank">
 					        <span class="glyphicon glyphicon-file"></span> Download 
 						</a>
 						{% endif %}
+						</p>
+						<p class="share">
+						<a href="https://twitter.com/intent/tweet?text='{{abstract.title|slice:":50"}} ...' by {{abstract.author.user.first_name}} {{abstract.author.user.last_name}} robtreharne.pythonanywhere.com/abstracts/{{abstract.id}}/ @PVSAT12 @livuni %23pvsatabstracts" target=="_blank"><i class="fa fa-twitter-square"></i></a>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=robtreharne.pythonanywhere.com/abstracts/{{abstract.id}}/" target="_blank"><i class="fa fa-facebook-square"></i></a>
+							<a href="https://plus.google.com/share?url=robtreharne.pythonanywhere.com/abstracts/{{abstract.id}}/"><i class="fa fa-google-plus-square" target=="_blank"></i></a>
+							<a href="https://www.linkedin.com/shareArticle?mini=true&url=robtreharne.pythonanywhere.com/abstracts/{{abstract.id}}/&title={{abstract.title}}&summary=PVSAT-12 abstract submitted by {{abstract.author.user.first_name}} {{abstract.author.user.last_name}}" target=="_blank"><i class="fa fa-linkedin-square"></i></a>
 						</p>
 						<p><strong>Themes: </strong></p>
 						<p>

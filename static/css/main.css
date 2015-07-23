@@ -77,7 +77,7 @@ p.justify {
     border: 1px solid #eee;
     margin: 2% 0%;
     max-width: 100%;
-	max-height: 300px;
+	max-height: 400px;
 	
     
 }
@@ -107,7 +107,6 @@ p.justify {
     border-radius: 150px;
     -webkit-border-radius: 150px;
     -moz-border-radius: 150px;
-    background: url('../../media/committee_img/mason.png') no-repeat;
 }
 
 .programme-section {
@@ -388,4 +387,8 @@ img.dinner-logo {
 	margin-bottom: 10px;
 	max-width: 200px;
 	display: block;
+}
+
+div.navbar-collapse.navbar-ex1-collapse.collapse.in {
+	max-height: 380px;
 }
