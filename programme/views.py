@@ -27,8 +27,7 @@ def abstract(request, abstract_id=1):
      return render(request, 'abstract.html', dictionary)
 
 def profile(request, user_id=1):
-	user = User.objects.get(id=user_id)
-	profile = UserProfile.objects.get(user_id=user.id)
+	profile = UserProfile.objects.get(user = User.objects.get(id=user_id))
         abstracts = Abstract.objects.filter(author=profile, status='Accepted')
 	dictionary = {'profile': profile,
                       'abstracts': abstracts}
