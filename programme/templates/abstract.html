@@ -9,7 +9,7 @@
 					<h2>{{abstract.title}}</h2>
 					<div class="abstract">
 							{% thumbnail abstract.author.picture "100x100" crop="center" as im %}
-							<img class="profile-pic" src="{{im.url}}">
+							<a href="/programme/profiles/{{abstract.author.user.id}}"><img class="profile-pic" src="{{im.url}}"></a>
 							{% endthumbnail %}
 						<p><strong>Submitted by: </strong><a href="/programme/profiles/{{abstract.author.user.id}}">{{abstract.author.user.first_name}} {{abstract.author.user.last_name}}</a>, {{abstract.author.affiliation}}</p>
 						<p>{{abstract.abstract|linebreaks}}</p>
@@ -28,9 +28,9 @@
 						</p>
 						<p><strong>Themes: </strong></p>
 						<p>
-						    <ul>
+						    <ul class="list-unstyled left">
 							{% for theme in abstract.theme.all %}
-							    <li>{{theme}}</li>
+							<li><a href="/programme/themes/{{theme.id}}">{{theme}}</a></li>
 							{% endfor %}
 							</ul>
 						</p>

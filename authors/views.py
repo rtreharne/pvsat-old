@@ -8,6 +8,35 @@ from authors.models import UserProfile, Abstract
 from django.contrib.auth.forms import UserCreationForm
 
 @login_required
+def submit_paper(request, abstract_id=1):
+	user = request.user
+	inst = Abstract.objects.get(id=abstract_id)
+        
+	if inst.author.user.id != user.id:
+            return HttpResponseRedirect(reverse('dashboard'))
+        else:
+            submitted = False
+            if request.method =='POST':
+                abstract_form = AbstractForm(data=request.POST, instance=inst)
+                if abstract_form.is_valid():
+                    abstract = abstract_form.save(commit=False)
+
+                    if 'upload' in request.FILES:
+                        abstract.upload = request.FILES['upload']
+                        
+                    abstract.save()
+
+                    submitted = True
+
+                else:
+                    print abstract_form.errors
+
+            else:
+                abstract_form = AbstractForm(instance=inst)
+
+            return render(request, 'submit_paper.html', {'abstract_form': abstract_form})
+
+@login_required
 def update_profile(request):
     submitted = False
     inst = UserProfile.objects.get(user=request.user)
@@ -93,6 +122,7 @@ def register(request):
 			{'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
 
 def user_login(request):
+    invalid = False
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
@@ -107,14 +137,14 @@ def user_login(request):
                 return HttpResponse("Your account is disabled")
 
         else:
-            print "Invalid login details"
-            return HttpResponse("Invalid login details supplied")
+            invalid = True 
+            return render(request, 'login.html', {'invalid': invalid})
                 
     else:
         if request.user.is_authenticated():
             return HttpResponseRedirect(reverse('home'))
         else:
-	    return render(request, 'login.html', {})
+            return render(request, 'login.html', {'invalid': invalid})
 
 def user_logout(request):
     logout(request)

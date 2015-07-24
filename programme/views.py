@@ -29,15 +29,14 @@ def abstract(request, abstract_id=1):
 def profile(request, user_id=1):
 	user = User.objects.get(id=user_id)
 	profile = UserProfile.objects.get(user_id=user.id)
-        abstracts = Abstract.objects.filter(author=profile)#, status='Accepted')
-	dictionary = {'user': user,
-                      'profile': profile,
+        abstracts = Abstract.objects.filter(author=profile, status='Accepted')
+	dictionary = {'profile': profile,
                       'abstracts': abstracts}
 	return render(request, 'profile.html', dictionary)
 
 def theme(request, theme_id=1):
 	theme = Theme.objects.get(id=theme_id)
-	abstracts = Abstract.objects.filter(theme=theme_id)#, status='Accepted')
+	abstracts = Abstract.objects.filter(theme=theme_id, status='Accepted')
         return render(request, 'theme.html', {'theme': theme, 'abstracts': abstracts})
 
 

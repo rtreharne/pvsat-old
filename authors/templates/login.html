@@ -6,6 +6,9 @@
             <div class="row">
                 <div class="col-lg-12">
 					<h2>Login</h2>
+					{% if invalid %}
+					<p>Oops, invalid username/password. Please try again.</p>
+					{% endif %}
 
 					<form id="login_form" method="post" action="/authors/login/">
 						{% csrf_token %}

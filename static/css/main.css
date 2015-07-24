@@ -177,6 +177,13 @@ ul {
 	padding: 0;
 }
 
+ul.left {
+	padding-top: 0;
+	line-height: 0.8em;
+	text-align: left;
+}
+
+
 .list-unstyled li {
     padding: 5px;
 }
